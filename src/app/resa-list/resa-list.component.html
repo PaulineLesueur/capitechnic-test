@@ -1,7 +1,9 @@
-<div class="card">
-    <h2>Réservation 0</h2>
-    <div class="container">
-        <span>2025-03-06</span>
-        <span>2025-03-16</span>
+<main>
+    <div class="card" *ngFor="let resa of resaList">
+        <h2>{{ resa.title }}</h2>
+        <div class="container">
+            <span>{{ resa.date_1 }}</span>
+            <span>{{ resa.date_2 }}</span>
+        </div>
     </div>
-</div>
+</main>
