@@ -1,6 +1,6 @@
 <header>
     <img class="logo" src="/assets/img/logo_capitechnic.png" alt="logo_capitechnic" />
     <button (click)="refresh()">
-        <span class="material-symbols-outlined refresh">refresh</span>
+        <span class="material-symbols-outlined refresh" [ngClass]="{ 'load': isLoading }">refresh</span>
     </button>
 </header>

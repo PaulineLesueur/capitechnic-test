@@ -16,3 +16,12 @@ header
         .refresh
             font-size: 45px
             font-weight: bold
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.load
+  animation: spin 0.5s ease-in-out
