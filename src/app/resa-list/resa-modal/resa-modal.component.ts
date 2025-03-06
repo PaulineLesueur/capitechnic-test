@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Resa } from 'src/app/models/resa';
 
 @Component({
   selector: 'app-resa-modal',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./resa-modal.component.sass']
 })
 export class ResaModalComponent {
-
+  @Input() resaToDisplay: Resa | undefined
 }

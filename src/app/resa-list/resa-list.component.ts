@@ -9,16 +9,20 @@ import { ResaService } from '../services/resa.service';
 })
 export class ResaListComponent implements OnInit {
   resaList: Resa[] = [];
+  visible = false;
+  resaData: Resa | undefined;
 
   constructor(private resaService: ResaService) {}
 
   ngOnInit(): void {
-    this.loadResa();
+     this.resaService.refreshResaList();
+     this.resaService.resaList$.subscribe(data => {
+      this.resaList = data;
+    });
   }
 
-  loadResa(): void {
-    this.resaService.findAll().subscribe(data => {
-      this.resaList = data;
-    })
+  showDialog(resa: Resa) {
+    this.visible = true;
+    this.resaData = resa;
   }
 }

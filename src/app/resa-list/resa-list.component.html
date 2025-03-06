@@ -1,5 +1,5 @@
 <main>
-    <div class="card" *ngFor="let resa of resaList">
+    <div class="card" *ngFor="let resa of resaList" (click)="showDialog(resa)">
         <h2>{{ resa.title }}</h2>
         <div class="container">
             <span>{{ resa.date_1 }}</span>
@@ -8,3 +8,6 @@
     </div>
 </main>
 
+<p-dialog [(visible)]="visible" [modal]="true" [closable]="true" [position]="'bottom'" [draggable]="false">
+    <app-resa-modal [resaToDisplay]="resaData"></app-resa-modal>
+</p-dialog>
